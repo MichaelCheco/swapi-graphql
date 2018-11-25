@@ -20,7 +20,7 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(Person),
             resolve(parent, args) {
                 return axios.get('https://swapi.co/api/people/')
-                .then(res => res.results)
+                .then(res => res.data.results)
             }
         }
     }
